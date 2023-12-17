@@ -10,5 +10,7 @@ COPY . /app
 # Install the application dependencies
 RUN pip install -r requirements.txt
 
+ENTRYPOINT ["python"]
+
 # Define the entry point for the container
 CMD ['app.py']
