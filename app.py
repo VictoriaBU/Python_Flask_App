@@ -50,7 +50,7 @@ def post_delete(id):
         db.session.commit()
         return redirect('/posts')
     except:
-        return "При удалении статьи произошла ошибка"
+        return "Something went wrong during post deleting"
 
 
 @app.route('/posts/<int:id>/update', methods=["POST", "GET"])
@@ -65,7 +65,7 @@ def post_update(id):
             db.session.commit()
             return redirect('/posts')
         except:
-            return "При редактировании статьи произошла ошибка"
+            return "Something went wrong during post editing"
     else:
 
         return render_template("post_update.html", article=article)
@@ -85,7 +85,7 @@ def create_article():
             db.session.commit()
             return redirect('/posts')
         except:
-            return "При добавлении статьи произошла ошибка"
+            return "Something went wrong during post creating"
     else:
         return render_template("create-article.html")
 
